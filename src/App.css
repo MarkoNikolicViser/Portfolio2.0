@@ -1,38 +1,507 @@
-.App {
-  text-align: center;
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav{
+  color: #eeeeee;
+  position: fixed;
+  padding-left: 10%;
+  padding-right: 5%;
+  background-color: #393e46;
+  height: 10vh;
+  width: 100%;
+  font-size: 2rem;
+  z-index: 101;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo{
+  font-weight: 600;
+  color: #00adb5;
+  height: 100%;
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 4rem;
+}
+nav ul{
+  height: 10vh;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+.opcije{
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.opcije :hover {
+  color: #00adb5;
+  cursor: pointer;
+}
+ .crta{
+  display: none;
+  animation: underlineAnime 0.3s ease-out;
+  background-color: #00adb5;
+  height: 0.5rem;
+  border: none;
+}
+.opcije :hover > .crta{
+  display: block;
+  }
+@keyframes underlineAnime{
+  0%{width: 0%;}
+  25% {width: 25%;} 
+  50%{width: 50%;}
+  75%{width: 75%;}
+  100% {width: 100%;} 
+}
+nav li{
+  list-style: none;
+}
+.moon{
+  width: 4.8rem;
+  text-align: center;
+  display: flex;
+  border: solid #00adb5 0.2rem;
+  padding: 0.7rem;
+  border-radius: 1rem;
+  background-color: #eeeeee;
+}
+.theme :hover{
+  animation:  tst 0.5s forwards;
+  fill: #00adb5;
+}
+.quote{
+  width: 62%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  font-weight: 600;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes tst{
+  0%{
+    background-color: #eeeeee;
+    fill: #393e46;
   }
-  to {
-    transform: rotate(360deg);
+  100%{
+    background-color: #393e46;
+    fill: #00adb5;
+  }
+}
+.home{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  color: #222831;
+}
+.home h1{
+  z-index: 100;
+  font-weight: 500;
+  font-size: 5rem;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+}
+.home h3{
+  z-index: 100;
+  font-weight: 400;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 30%;
+  left: 5%;
+}
+.lik{
+  z-index: 100;
+  width: 60%;
+  height: 80%;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+}
+.krug{
+  z-index: 2;
+  width: 14rem;
+  height: 14rem;
+  background-color: red;
+  opacity: 0.3;
+  border-radius: 50%;
+  position: absolute;
+  animation: y 30s linear infinite alternate;
+}
+.krug2{
+  z-index: 2;
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  opacity: 0.3;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 0.5rem solid green;
+  animation: y 100s linear infinite alternate;
+}
+.krug3{
+  margin-top: 30vh;
+  z-index: 2;
+  position: absolute;
+  opacity: 0.3;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  border: 0.5rem solid #222831;
+}
+.x {
+  animation: x 30s linear infinite alternate;
+}
+@keyframes x {
+  100% {
+    transform: translateX( calc(100vw - 10rem) );
+  }
+}
+@keyframes y {
+  0%   {background-color: #222831;
+  }
+  25%  {background-color: #393e46;
+  }
+  50%  {background-color: #00adb5;
+  }
+  100% {
+    transform: translateY( calc(100vh -  10rem) );
+    background-color: #c6e41c;
+  }
+}
+.about{
+  padding-top: 10rem;
+  text-align: center;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4rem;
+}
+.about h1{
+  position: relative;
+  font-size: 4rem;
+  font-weight: 700;
+  z-index: 100;
+  padding-bottom: 1rem;
+}
+.about h2{
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+.about p{
+  text-align: center;
+  width: 50%;
+  font-size: 1.7rem;
+  padding-bottom: 1rem;
+}
+.skills{
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skills svg{
+  padding: 1rem;
+  width: 10rem;
+  height: 10rem;
+}
+.projects{
+  height: auto;
+  width: 100%;
+}
+.projects h1{
+  z-index: 100;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  padding-bottom: 3rem;
+}
+.card img{
+  padding: 3%;
+  width: 100%;
+  height: 20rem;
+}
+.projects-cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+}
+.card
+{
+  z-index: 100;
+  background-color: #eeeeee;
+  width: 25%;
+  height: auto;
+  box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem #888888;
+  border-radius: 1rem;
+}
+.used-tech{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+.used-tech h5{
+  margin: 0.2rem;
+  text-align: center;
+  background-color: black;
+  color: #eeeeee;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+.card h3{
+  padding-bottom: 1rem;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 500;
+}
+.btns{
+  width: 100%;
+  height: 13%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 2rem;
+}
+.card p{
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: justify;
+}
+.btn-1{
+  color: #eeeeee;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 100%;
+  background-color: #00adb5;
+  border-radius: 10rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem #888888;
+}
+.btn-1:hover{
+  animation: forwards 0.7s btn-animation;
+}
+@keyframes btn-animation{
+  100%{
+    background-color: #eeeeee;
+    color: #00adb5;
+    border: 0.2rem solid #00adb5;
+  }
+}
+.contact{
+  width: 100%;
+  height: auto;
+}
+.contact h1{
+  padding-top: 3%;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  padding-bottom: 3%;
+}
+.options{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2rem;
+  font-weight: 600;
+  padding-bottom: 3%;
+}
+.options div{
+  z-index: 100;
+  background-color: #eeeeee;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 60%;
+  border: 0.5rem solid black;
+}
+.options svg{
+  padding-left: 1rem;
+  width: 10%;
+  height: 80%;
+  overflow: hidden;
+}
+.options h3{
+  margin-right: 30%;
+  margin-left: 42%;
+}
+
+.options :hover{
+  cursor: pointer;
+  overflow: hidden;
+  animation: forwards 0.7s options-anime;
+}
+@keyframes options-anime{
+  100%{
+    background-color: #393e46;
+    color: #eeeeee;
+    fill: #eeeeee;
+  }
+}
+footer{
+ text-align: center;
+}
+#input-mail{
+  height: auto;
+  text-align: center;
+}
+.input3{
+  margin-top: 3rem;
+  width: 80%;
+  height: 10rem;
+}
+.input1,.input2{
+  width: 60%;
+  height: 2.5rem;
+}
+/* ovo je dugme za slanje maila*/
+.sub{
+  width: 6rem;
+  height: 2rem;
+  font-size: 1.4rem;
+  color: black;
+  background-color: rgb(181, 247, 181);
+  margin-left: 70%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+
+}
+::placeholder{
+  padding-left: 5rem;
+}
+
+.input1,.input2,.input3, #input-mail div, textarea, .sub{
+  z-index: 100;
+  border-radius: 0.4rem;
+  border: none;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem #888888;
+}
+.more{
+  padding-top: 0.3rem;
+  overflow: hidden;
+}
+form{
+  z-index: 100;
+}
+textarea{
+  margin-top: 1rem;
+  width: 70%;
+  height: 9rem;
+  resize: none;
+  z-index: 100;
+}
+#input-mail:hover{
+  background-color: #eeeeee;
+  cursor: auto;
+}
+.App{
+  overflow: hidden;
+}
+.sendvic{
+  display: none;
+  width:5rem;
+  height:5rem;
+  background-color:#eeeeee;
+  border-radius: 1rem;
+}
+.bar1,.bar2,.bar3{
+  width: 70%;
+  height: 10%;
+  background-color: black;
+  border: none;
+  margin-left: 15%;
+  margin-bottom: 10%;
+  margin-top: 17%;
+  border-radius: 0.6rem;
+}
+.sendvic-opcije{
+  display: none;
+  font-size: 3rem;
+  width: auto;
+  background-color: #393e46;
+  float: right;
+  display: flex;
+  text-align: center;
+  opacity: 0.9;
+  padding: 5rem;
+  border-radius:0 0 2rem 2rem;
+}
+.sendvic-opcije li{
+  padding-bottom: 2rem;
+}
+.sendvic-opcije :hover{
+  color: #00adb5;
+  cursor: pointer;
+}
+.gasi-sendvic-opcije{
+  font-size: 5rem;
+  transform: rotate(45deg);
+  margin-left: 100%;
+  margin-top: -40%;
+  margin-bottom: 20%;
+}
+form{
+  width: 60%;
+  border: 0.5rem solid black;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 1024px){
+  html{
+    font-size: 52.5%;
+  }
+  .projects-cards{
+    z-index: 100;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+  .card{
+    width: 60%;
+    margin-bottom: 5%;
+  }
+  .card img{
+    height: 50%;
+  }
+  .nav-opcija{
+    display: none;
+  }
+  .sendvic{
+    display: block;
+  }
+  .sendvic-opcije{
+    display: block;
+  }
+  .lik{
+    height: 90%;
+    width: 70%;
+    left: 20%;
+  }
+  .quote{
+    width: 100%;
   }
 }
