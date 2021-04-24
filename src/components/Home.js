@@ -16,7 +16,7 @@ useEffect(() => {
     else{
         HomeRef.current.style.backgroundColor="#eeeeee";
         HomeRef.current.style.color="#222831";
-
+        Krug3Ref.current.style.backgroundColor="#gray"  
     }
 }, [dark])
 
