@@ -38,8 +38,9 @@ nav ul{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
-.opcije :hover {
+.opcije li:hover {
   color: #00adb5;
   cursor: pointer;
 }
@@ -49,16 +50,16 @@ nav ul{
   background-color: #00adb5;
   height: 0.5rem;
   border: none;
+  position: absolute;
 }
 .opcije :hover > .crta{
+  width: 9rem;
+  overflow: hidden;
   display: block;
   }
 @keyframes underlineAnime{
   0%{width: 0%;}
-  25% {width: 25%;} 
-  50%{width: 50%;}
-  75%{width: 75%;}
-  100% {width: 100%;} 
+  100% {width: 20%;} 
 }
 nav li{
   list-style: none;
@@ -72,10 +73,12 @@ nav li{
   border-radius: 1rem;
   background-color: #eeeeee;
 }
-.theme :hover{
+.moon:hover{
   animation:  tst 0.5s forwards;
   fill: #00adb5;
 }
+
+
 .quote{
   width: 62%;
   display: flex;
@@ -239,6 +242,7 @@ nav li{
 }
 .card
 {
+  position: relative;
   z-index: 100;
   background-color: #eeeeee;
   width: 25%;
@@ -268,12 +272,14 @@ nav li{
 }
 .btns{
   width: 100%;
-  height: 13%;
+  height: 4rem;
   display: flex;
   justify-content: space-evenly;
-  padding-bottom: 2rem;
+  position: absolute;
+  bottom: 0;
 }
 .card p{
+  height: 14rem;
   padding: 1rem;
   font-size: 1.2rem;
   font-weight: 500;
@@ -290,7 +296,7 @@ nav li{
   align-items: center;
   justify-content: center;
   width: 40%;
-  height: 100%;
+  height: 2rem;
   background-color: #00adb5;
   border-radius: 10rem;
   box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem #888888;
@@ -338,8 +344,7 @@ nav li{
 }
 .options svg{
   padding-left: 1rem;
-  width: 10%;
-  height: 80%;
+  width: 4rem;
   overflow: hidden;
 }
 .options h3{
@@ -347,7 +352,7 @@ nav li{
   margin-left: 42%;
 }
 
-.options :hover{
+.options div:hover{
   cursor: pointer;
   overflow: hidden;
   animation: forwards 0.7s options-anime;
@@ -377,19 +382,23 @@ footer{
 }
 /* ovo je dugme za slanje maila*/
 .sub{
+  background-color: #00adb5;
   width: 6rem;
   height: 2rem;
-  font-size: 1.4rem;
-  color: black;
-  background-color: rgb(181, 247, 181);
   margin-left: 70%;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  color: #eeeeee;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-content: center;
-  text-align: center;
-
+}
+.sub:hover{
+  animation: forwards 0.7s btn-animation;
 }
 ::placeholder{
   padding-left: 5rem;
@@ -399,14 +408,12 @@ footer{
   z-index: 100;
   border-radius: 0.4rem;
   border: none;
+  font-family: Arial, Helvetica, sans-serif;
   box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem #888888;
 }
 .more{
   padding-top: 0.3rem;
   overflow: hidden;
-}
-form{
-  z-index: 100;
 }
 textarea{
   margin-top: 1rem;
@@ -415,9 +422,8 @@ textarea{
   resize: none;
   z-index: 100;
 }
-#input-mail:hover{
-  background-color: #eeeeee;
-  cursor: auto;
+textarea::placeholder{
+  padding-top: 1rem;
 }
 .App{
   overflow: hidden;
@@ -466,6 +472,7 @@ textarea{
   margin-bottom: 20%;
 }
 form{
+  z-index: 2;
   width: 60%;
   border: 0.5rem solid black;
   margin-bottom: 1rem;
